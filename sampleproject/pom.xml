@@ -9,6 +9,11 @@
 
   <name>sampleproject</name>
   <url>http://maven.apache.org</url>
+   <scm>
+	<url>https://github.com/samith212324/opencart.git</url>
+	<connection>scm:git:git://github.com/samith212324/opencart.git</connection>
+	<developerConnection>scm:git:git@github.com:samith212324/opencart.git</developerConnection>
+   </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,7 +27,23 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  </distributionManagement>
+  
+  <build>
+  <plugins>  
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+ </plugin>
+ </plugins>
+ </build> 
+ 
+  <distributionManagement>
+  <repository>
+	   <id>central</id>			        			      
+		 <name>DESKTOP-F23DK7G-releases</name>
+		 <url>http://localhost:8081/artifactory/ext-release-local</url>
+			</repository>
    <snapshotRepository>
 		       <id>central</id> 
 			   <name>DESKTOP-F23DK7G-snapshots</name>
